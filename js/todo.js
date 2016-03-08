@@ -26,6 +26,10 @@ var app = angular.module('todoApp', []);
         $scope.done = function(){
             if ($scope.tasks[this.$index].completed == false ){
                 $scope.tasks[this.$index].completed = true;
+            }else{
+                if($scope.tasks[this.$index].completed == true){
+                    $scope.tasks[this.$index].completed = false;
+                }
             }
         }
     });
