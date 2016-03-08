@@ -9,17 +9,23 @@ var app = angular.module('todoApp', []);
 
         /*Funcion para agregar tareas*/
         $scope.add = function() {
-            $scope.tasks.push($scope.title);
+            var newTodo = {
+                title: $scope.title,
+                completed: false
+            };
+            $scope.tasks.push(newTodo);
             $scope.title = '';
-        }
+        };
 
         /*Funcion para eliminar*/
         $scope.delete = function() {
             $scope.tasks.splice(this.$index, 1);
             $scope.title = '';
-        }
+        };
 
         $scope.done = function(){
-            $scope.clicked = true;
+            if ($scope.tasks[this.$index].completed == false ){
+                $scope.tasks[this.$index].completed = true;
+            }
         }
     });

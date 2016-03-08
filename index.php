@@ -28,12 +28,13 @@
 
                 <h4 class="text-center"> List of Tasks</h4>
                 <ul style="list-style: none;">
+
                     <li ng-repeat="t in tasks">
                         <div class="col-lg-12">
                             <div class="input-group">
-                                <input type="text" class="form-control clicked_{{clicked}}" readonly="readonly" aria-label="..." value="{{t}}">
+                                <input type="text" class="form-control clicked_{{t.completed}}" readonly="readonly" aria-label="..." value="{{t.title}}">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="button" ng-click="done()">Done?</button>
+                                    <button class="btn btn-default" type="checkbox" ng-click="done()">Done?</button>
                                     <button class="btn btn-danger" type="button" ng-click="delete()">X!</button>
                                 </div>
                             </div>
