@@ -19,8 +19,21 @@
 
                 <br><br><br>
                 <h4 class="text-center"> List of Tasks</h4>
-                <ul>
-                    <li ng-repeat="t in tasks">{{t}}<button ng-click="delete()"class="btn btn-danger pull-right">Delete</button></li>
+                <ul style="list-style: none;">
+                    <li ng-repeat="t in tasks">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                {{t}}
+                            </div>
+                            <div class="col-lg-6">
+                                <button ng-click="delete()"class="btn btn-danger pull-right">
+                                    X
+                                </button>
+                            </div>
+                            <br><br>
+                        </div>
+
+                    </li>
                 </ul>
             </div>
         </div>
