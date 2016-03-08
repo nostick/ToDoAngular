@@ -34,7 +34,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control clicked_{{t.completed}}" readonly="readonly" aria-label="..." value="{{t.title}}">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="checkbox" ng-click="done()">Done?</button>
+                                    <button class="btn btn-default" type="checkbox" ng-click="done()">{{isDone}}</button>
                                     <button class="btn btn-danger" type="button" ng-click="delete()">X!</button>
                                 </div>
                             </div>
