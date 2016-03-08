@@ -18,4 +18,8 @@ var app = angular.module('todoApp', []);
             $scope.tasks.splice(this.$index, 1);
             $scope.title = '';
         }
+
+        $scope.done = function(){
+            $scope.clicked = true;
+        }
     });

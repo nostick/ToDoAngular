@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>ToDo Project</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .clicked_true{
+            text-decoration:line-through;
+        }
+    </style>
 
 </head>
 <body ng-app="todoApp" >
@@ -13,24 +18,26 @@
             <h4 class="text-center">To Do List With AngularJS</h4>
             <br><br>
             <div class="col-lg-6 col-lg-push-3">
-
-                <input type="text" placeholder="I have to do..." class="form-control input-lg" ng-model="title"> <br>
-                <button ng-click="add()"class="btn btn-primary pull-right">Add</button>
-
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg" placeholder="I have to do.." ng-model="title">
+                    <span class="input-group-btn">
+                          <button class="btn btn-primary btn-lg" type="button" ng-click="add()">Add!</button>
+                    </span>
+                </div><!-- /input-group -->
                 <br><br><br>
+
                 <h4 class="text-center"> List of Tasks</h4>
                 <ul style="list-style: none;">
                     <li ng-repeat="t in tasks">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                {{t}}
+                            <div class="input-group">
+                                <input type="text" class="form-control clicked_{{clicked}}" readonly="readonly" aria-label="..." value="{{t}}">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="done()">Done?</button>
+                                    <button class="btn btn-danger" type="button" ng-click="delete()">X!</button>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <button ng-click="delete()"class="btn btn-danger pull-right">
-                                    X
-                                </button>
-                            </div>
-                            <br><br>
+                            <br>
                         </div>
 
                     </li>
